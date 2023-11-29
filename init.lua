@@ -151,51 +151,14 @@ require('lazy').setup({
       end,
     },
   },
-
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     name = 'onedark',
     priority = 200,
   },
-
-  -- My default theme
   {
-    'catppuccin/nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin'
-    end,
-  },
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup()
-    end
-  },
-  {
-  'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-        config = {
-          header = {
-    '',
-    ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-    ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-    ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-    ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-    ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-    ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-    '',
-  }
-        }
-      }
-    end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    'tpope/vim-rails',
   },
   {
     -- Set lualine as statusline
@@ -243,6 +206,10 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'folke/trouble.nvim',
+    cmd = 'TroubleToggle',
+  },
 
   {
     -- Highlight, edit, and navigate code
@@ -258,6 +225,10 @@ require('lazy').setup({
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.catpuccin',
+  require 'kickstart.plugins.copilot',
+  require 'kickstart.plugins.dashboard',
+  require 'kickstart.plugins.dashboard',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
