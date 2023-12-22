@@ -228,7 +228,7 @@ require('lazy').setup({
   require 'kickstart.plugins.catpuccin',
   require 'kickstart.plugins.copilot',
   require 'kickstart.plugins.dashboard',
-  require 'kickstart.plugins.dashboard',
+  require 'kickstart.plugins.surround',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -361,7 +361,7 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -522,9 +522,10 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  tsserver = {},
+  solargraph = {},
+  rubocop = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
