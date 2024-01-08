@@ -229,6 +229,7 @@ require('lazy').setup({
   require 'kickstart.plugins.copilot',
   require 'kickstart.plugins.dashboard',
   require 'kickstart.plugins.surround',
+  require 'kickstart.plugins.oil',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping

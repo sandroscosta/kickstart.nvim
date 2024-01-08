@@ -2,6 +2,7 @@
 --
 -- Use your language server to automatically format your code on save.
 -- Adds additional commands as well to manage the behavior
+-- Remove the unwritten
 
 return {
   {
@@ -11,7 +12,10 @@ return {
     event = "InsertEnter",
     enabled = true,
     opts = {
-      suggestion = { enabled = true, auto_trigger = true },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+      },
       panel = { enabled = false },
       -- filetypes = {
       --   markdown = true,
