@@ -120,6 +120,8 @@ end)
 
 -- Enable break indent
 vim.opt.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.tabstop = 4
 
 -- Save undo history
 vim.opt.undofile = true
@@ -229,6 +231,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  opts = {
+    tabstop = 4,
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -313,17 +318,16 @@ require('lazy').setup({
         },
       },
 
-      -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      },
-    },
+         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+         { '<leader>d', group = '[D]ocument' },
+         { '<leader>r', group = '[R]ename' },
+         { '<leader>s', group = '[S]earch' },
+         { '<leader>w', group = '[W]orkspace' },
+         { '<leader>t', group = '[T]oggle' },
+         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+       },
+     },
   },
 
   -- NOTE: Plugins can specify dependencies.
@@ -353,9 +357,6 @@ require('lazy').setup({
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-
-      -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -938,7 +939,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'kickstart.plugins.catpuccin',
-  require 'kickstart.plugins.codeium',
+  require 'kickstart.plugins.supermaven',
   require 'kickstart.plugins.oil',
   require 'kickstart.plugins.nvim-surround',
   require 'kickstart.plugins.neotree',
