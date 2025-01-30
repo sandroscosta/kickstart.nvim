@@ -122,6 +122,10 @@ end)
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -319,15 +323,15 @@ require('lazy').setup({
       },
 
       spec = {
-         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-         { '<leader>d', group = '[D]ocument' },
-         { '<leader>r', group = '[R]ename' },
-         { '<leader>s', group = '[S]earch' },
-         { '<leader>w', group = '[W]orkspace' },
-         { '<leader>t', group = '[T]oggle' },
-         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-       },
-     },
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      },
+    },
   },
 
   -- NOTE: Plugins can specify dependencies.
